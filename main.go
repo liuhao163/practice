@@ -1,13 +1,14 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	//"practice/sort"
 	//"practice/cal"
-	"practice/tree"
+	//"practice/tree"
 )
 
 func main() {
+
 	//m := make(map[int]int64, 100)
 	//
 	//fmt.Println(cal.Fibonacci(30, m))
@@ -78,25 +79,25 @@ func main() {
 	//fmt.Println("Tree postOrder========")
 	//tree.PostOrder(&treeNode)
 	//fmt.Println()
-
-	t := &tree.TreeNode{}
-	t.Value = 33
-	tree.InsertNode(t, 16)
-	tree.InsertNode(t, 50)
-	tree.InsertNode(t, 13)
-	tree.InsertNode(t, 18)
-	tree.InsertNode(t, 34)
-	tree.InsertNode(t, 58)
-	tree.InsertNode(t, 15)
-	tree.InsertNode(t, 17)
-	tree.InsertNode(t, 25)
-	tree.InsertNode(t, 51)
-	tree.InsertNode(t, 66)
-	tree.InsertNode(t, 19)
-	tree.InsertNode(t, 27)
-	tree.InsertNode(t, 55)
-	fmt.Println("Tree insert========")
-	t.PreIterate()
+	//
+	//t := &tree.TreeNode{}
+	//t.Value = 33
+	//tree.InsertNode(t, 16)
+	//tree.InsertNode(t, 50)
+	//tree.InsertNode(t, 13)
+	//tree.InsertNode(t, 18)
+	//tree.InsertNode(t, 34)
+	//tree.InsertNode(t, 58)
+	//tree.InsertNode(t, 15)
+	//tree.InsertNode(t, 17)
+	//tree.InsertNode(t, 25)
+	//tree.InsertNode(t, 51)
+	//tree.InsertNode(t, 66)
+	//tree.InsertNode(t, 19)
+	//tree.InsertNode(t, 27)
+	//tree.InsertNode(t, 55)
+	//fmt.Println("Tree insert========")
+	//t.PreIterate()
 	//fmt.Println(t)
 
 }
