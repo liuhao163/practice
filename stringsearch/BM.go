@@ -1,28 +1,36 @@
 package stringsearch
 
 func BM(s string, p string) int {
+	//初始化好后缀
 	suffix, prefix := initGS(p)
+
+	//初始化坏字符
 	bc := initBC(p)
 	for i := 0; i < len(s)-len(p); {
 		j := len(p) - 1
 
+		//从后往前匹配
 		for ; j >= 0; j-- {
 			if s[i+j] != p[j] {
 				break
 			}
 		}
 
+		//整个模式串都符合直接返回
 		if j < 0 {
 			return i
 		}
 
+		//坏字符规则
 		x := j - bc[s[i+j]]
 
+		//好后缀
 		y := 1
 		if j < len(p)-1 {
 			y = moveGS(j, len(p), suffix, prefix)
 		}
 
+		//移动i相当于按照规则移动模式串
 		ret := x
 		if y > x {
 			ret = y
