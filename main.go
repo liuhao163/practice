@@ -1,10 +1,8 @@
 package main
 
 import (
-	//"fmt"
-	//"practice/sort"
-	//"practice/cal"
-	//"practice/tree"
+	"fmt"
+	"practice/stringsearch"
 )
 
 func main() {
@@ -99,5 +97,13 @@ func main() {
 	//fmt.Println("Tree insert========")
 	//t.PreIterate()
 	//fmt.Println(t)
+
+	s := "abbacabczbcbcbacabc"
+	p := "cab"
+	i := stringsearch.BM(s, p)
+
+	if i > 0 {
+		fmt.Printf("idx:%d,string:%s", i, s[i:i+len(p)])
+	}
 
 }
