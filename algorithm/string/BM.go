@@ -38,7 +38,7 @@ func moveGS(j int, pLen int, suffix []int, prefix []bool) int {
 	if suffix[k] != -1 {
 		return j - suffix[k] + 1
 	} else {
-		for r := j + 2; j < pLen-1; j++ {
+		for r := j + 2; r <= pLen-1; r++ {
 			if prefix[pLen-1-r+1] {
 				return r
 			}
