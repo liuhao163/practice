@@ -1,10 +1,12 @@
 package main
 
+import "fmt"
+
 func BM(s []byte, p []byte) int {
-	//bcMap := genBC(p)
+	bcMap := genBC(p)
 	//good suffix
 	suffix, prefix := genGS(p)
-	for i := 0; i < len(s); {
+	for i := 0; i < len(s)-len(p); {
 		j := len(p) - 1
 		for ; j >= 0; j-- {
 			if s[i+j] != p[j] {
@@ -17,10 +19,11 @@ func BM(s []byte, p []byte) int {
 			return i
 		}
 
-		//x := j - getBC(s[i+j], bcMap)
-		x := -10000
-
-		y := moveGS(j, len(p), suffix, prefix)
+		x := j - getBC(s[i+j], bcMap)
+		y := 0
+		if j < len(p)-1 {
+			y = moveGS(j, len(p), suffix, prefix)
+		}
 
 		if x < y {
 			i = i + y
@@ -33,19 +36,18 @@ func BM(s []byte, p []byte) int {
 	return -1
 }
 
-func moveGS(j int, pLen int, suffix []int, prefix []bool) int {
-	k := pLen - 1 - j
+func moveGS(j int, m int, suffix []int, prefix []bool) int {
+	k := m - 1 - j
 	if suffix[k] != -1 {
 		return j - suffix[k] + 1
-	} else {
-		for r := j + 2; r <= pLen-1; r++ {
-			if prefix[pLen-1-r+1] {
-				return r
-			}
+	}
+	for r := j + 2; r <= m-1; r++ {
+		if prefix[m-r] {
+			return r
 		}
 	}
 
-	return pLen
+	return m
 }
 
 const asc_size int = 255
@@ -77,16 +79,18 @@ func genGS(p []byte) ([]int, []bool) {
 	for i := 0; i < len(p)-1; i++ {
 		j := i
 		k := 0
-		for j >= 0 && p[j] >= p[len(p)-1-k] {
+		for j >= 0 && p[j] == p[len(p)-1-k] {
 			k++
-			suffix[k] = j
 			j--
+			suffix[k] = j + 1
 		}
 
-		if j < 0 {
+		if j == -1 {
 			prefix[k] = true
 		}
 	}
+
+	fmt.Println(suffix)
 
 	return suffix, prefix
 }
