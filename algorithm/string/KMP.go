@@ -12,7 +12,11 @@ func KMP(s string, p string) int {
 			i++
 			j++
 		} else {
-			j = next[j]
+			if j==0{
+				j = next[0]
+			}else{
+				j = next[j-1]+1
+			}
 		}
 	}
 
