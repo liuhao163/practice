@@ -8,7 +8,7 @@ func KMP(s string, p string) int {
 	i := 0
 
 	for i < len(s) && j < len(p) {
-		if j == -1 || s[i] == p[j] {
+		if j ==-1 || s[i] == p[j] {
 			i++
 			j++
 		} else {
@@ -17,8 +17,8 @@ func KMP(s string, p string) int {
 	}
 
 	if j == len(p) {
-		return i - j
-	} else {
+		return i-j
+	}else{
 		return -1
 	}
 
@@ -56,7 +56,7 @@ func getNexts(p string) []int {
 		}
 	}
 
-	fmt.Print(nexts)
+	fmt.Println(nexts)
 
 	//nexts[0] = -1
 	//k := -1
