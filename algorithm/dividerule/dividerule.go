@@ -1,7 +1,5 @@
 package main
 
-var I = 0
-
 type ReversedCount struct {
 	Num int
 	A   []int
@@ -17,10 +15,10 @@ func (this *ReversedCount) Count(p int, r int) {
 	this.Count(p, m)
 	this.Count(m+1, r)
 
-	this.revicerdMerge(p, m, r)
+	this.merge(p, m, r)
 }
 
-func (this *ReversedCount) revicerdMerge(p int, m int, r int) {
+func (this *ReversedCount) merge(p int, m int, r int) {
 	j := p
 	k := m + 1
 	tmp := make([]int, r-p+1)
