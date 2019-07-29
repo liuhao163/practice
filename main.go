@@ -108,4 +108,5 @@ func main() {
 
 	fmt.Println(dp.Knapsack(dp.Pkg, dp.Value, 5, 9))
 
+	fmt.Println(dp.ShortDir(dp.Triangle))
 }
