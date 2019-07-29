@@ -4,7 +4,7 @@ var Pkg = []int{2, 2, 4, 6, 3}
 var Value = []int{3, 4, 8, 9, 6}
 
 /**
-最小背包问题
+背包0-1
 */
 func Knapsack(pkg []int, value []int, n int, w int) int {
 	state := make([][]int, n)
