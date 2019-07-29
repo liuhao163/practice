@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"practice/stringsearch"
+	"practice/dp"
 )
 
 func main() {
@@ -98,12 +98,14 @@ func main() {
 	//t.PreIterate()
 	//fmt.Println(t)
 
-	s := "abbacabczbcbcbacabc"
-	p := "cab"
-	i := stringsearch.BM(s, p)
+	//s := "abbacabczbcbcbacabc"
+	//p := "cab"
+	//i := stringsearch.BM(s, p)
+	//
+	//if i > 0 {
+	//	fmt.Printf("idx:%d,string:%s", i, s[i:i+len(p)])
+	//}
 
-	if i > 0 {
-		fmt.Printf("idx:%d,string:%s", i, s[i:i+len(p)])
-	}
+	fmt.Println(dp.Knapsack(dp.Pkg, dp.Value, 5, 9))
 
 }
