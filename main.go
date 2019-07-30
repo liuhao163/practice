@@ -106,7 +106,15 @@ func main() {
 	//	fmt.Printf("idx:%d,string:%s", i, s[i:i+len(p)])
 	//}
 
-	fmt.Println(dp.Knapsack(dp.Pkg, dp.Value, 5, 9))
+	//fmt.Println(dp.Knapsack(dp.Pkg, dp.Value, 5, 9))
+	//
+	//fmt.Println(dp.ShortDir(dp.Triangle))
+	//
 
-	fmt.Println(dp.ShortDir(dp.Triangle))
+	sum := 999
+	money := []int{1, 3, 5}
+	fmt.Println(dp.ChargeDP(money, sum))
+
+	dp.ChargeRC(0, sum, money, 0)
+	fmt.Println(dp.MinVal)
 }
