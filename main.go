@@ -111,8 +111,8 @@ func main() {
 	//fmt.Println(dp.ShortDir(dp.Triangle))
 	//
 
-	sum := 999
-	money := []int{1, 3, 5}
+	sum := 102
+	money := []int{1, 2, 5}
 	fmt.Println(dp.ChargeDP(money, sum))
 
 	dp.ChargeRC(0, sum, money, 0)
