@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"practice/bitmap"
 	"practice/dp"
 )
 
@@ -115,6 +116,11 @@ func main() {
 	money := []int{1, 2, 5}
 	fmt.Println(dp.ChargeDP(money, sum))
 
-	dp.ChargeRC(0, sum, money, 0)
-	fmt.Println(dp.MinVal)
+	//dp.ChargeRC(0, sum, money, 0)
+	//fmt.Println(dp.MinVal)
+
+	bm:=bitmap.NewBitMap(100,32)
+
+	bm.Set(3)
+	fmt.Println(bm.Exists(3))
 }
