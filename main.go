@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"practice/bitmap"
+	"practice/bt"
 	"practice/dp"
 )
 
@@ -123,4 +124,7 @@ func main() {
 
 	bm.Set(3)
 	fmt.Println(bm.Exists(3))
+
+	q:=bt.NewQueen(8)
+	q.Queen(0)
 }
