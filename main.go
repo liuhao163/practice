@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"practice/bitmap"
-	"practice/bt"
 	"practice/dp"
 )
 
@@ -123,8 +122,14 @@ func main() {
 	bm:=bitmap.NewBitMap(100,32)
 
 	bm.Set(3)
+	bm.Set(1)
+	bm.Set(99)
+	bm.Set(50)
 	fmt.Println(bm.Exists(3))
+	fmt.Println("==========")
+	bm.Sort()
+	fmt.Println("\n==========")
 
-	q:=bt.NewQueen(8)
-	q.Queen(0)
+	//q:=bt.NewQueen(8)
+	//q.Queen(0)
 }
