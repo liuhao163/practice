@@ -6,7 +6,7 @@ import (
 )
 
 func TestReverseStr(t *testing.T) {
-	str := "abc"
-	str = ReverseStr(str)
-	fmt.Println(str)
+	str := []byte("abcde")
+	ReverseStr(str)
+	fmt.Println(string(str))
 }
